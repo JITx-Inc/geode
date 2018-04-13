@@ -298,7 +298,7 @@ template<ReduceMode reduce_mode, class TField> static void mesh_reduce_helper(Mu
   heap.make();
 
   // Update the quadric information for a vertex
-  const auto update = [&heap,best_collapse,area](const VertexId v) {
+  const auto update = [&heap,best_collapse](const VertexId v) {
     const auto qe = best_collapse(v);
     if (qe.y.valid())
       heap.set(v,qe.x,qe.y);
